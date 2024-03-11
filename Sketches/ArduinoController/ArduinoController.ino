@@ -1,3 +1,6 @@
+//This sketch allows to control the transverter using an arduino.
+//This will ONLY work if the attiny has the sketch AttinySlave inside!
+
 #include <SimpleAdf.h>
 #include <SPI.h>
 #include <SoftwareSerial.h>
@@ -13,23 +16,14 @@ char transValChar[] = "0";
 byte transVal = 0;
 byte lastTransVal = 255;
 
-adf4351Config listeningConfig = {true, 12.3, 40, 1, false, true, fourDiv5, fundamental, false, 1, 
-{lowNoise, digitalLockDetect, false, twoDot5, intN, tenNs, positive, false, false, false},
-{high, int3ns, true, true, fastLock, 150},
-{false, true, auxDivided, false, minus4, true, minus1, 40},
-{digitalLock}
-};
-
-adf4351Config txConfig = {true, 12.3, 40, 1, false, true, fourDiv5, fundamental, false, 1, 
+adf4351Config adfConfig = {true, 100, 40, 1, false, true, eightDiv9, fundamental, false, 1, 
 {lowNoise, digitalLockDetect, false, twoDot5, fracN, tenNs, positive, false, false, false},
-{high, frac6ns, false, false, fastLock, 150},
-{false, false, auxDivided, false, minus4, true, minus1, 40},
+{low, frac6ns, false, false, off, 150},
+{false, false, auxDivided, false, minus4, true, plus5, 200},
 {digitalLock}
 };
 
-Adf4351 rxAdf(listeningConfig, pins);
-Adf4351 txAdf(txConfig, pins);
-
+Adf4351 adf(adfConfig, pins);
 SoftwareSerial transvSerial(data, data);
 
 void setup() { 
@@ -61,19 +55,19 @@ void SetFrequency(byte transverterVal) {
 	  digitalWrite(data, LOW);
     switch (transverterVal) {
       case 0:
-        txAdf.SetFreq(200);
+        adf.SetFreq(200);
         digitalWrite(LED_BUILTIN, LOW);
       break;
       case 1:
-        txAdf.SetFreq(166.25);
+        adf.SetFreq(166.25);
         digitalWrite(LED_BUILTIN, HIGH);
       break;
       case 2:
-        txAdf.SetFreq(159); //41
+        adf.SetFreq(159); //41
         digitalWrite(LED_BUILTIN, HIGH);
       break;
       case 3:
-        txAdf.SetFreq(141.075); //58.925
+        adf.SetFreq(141.075); //58.925
         digitalWrite(LED_BUILTIN, HIGH);
       break;
     }

@@ -92,7 +92,7 @@ void Adf4351::SetFreq(float desiredFreqMhz) {
 	for(byte i = 5; i > -1; i--)
 		registers[i] = 0;
 
-	//Check datasheet to check the bit positions
+	//Check adf datasheet to check the bit positions
 	registers[0] = ((0 & 0x1L) << 31) | ((integer & 0xFFFFL) << 15) | ((frac & 0xFFFL) << 3) | ((0 & 0x7L) << 0);
 	registers[1] = ((0 & 0x7L) << 29) | ((_adfConf.phaseAdjust & 0x1L) << 28) | ((_adfConf.prescaler & 0x1L) << 27)
 			| ((_adfConf.phaseValue & 0xFFFL) << 15)| ((mod & 0xFFFL) << 3)| ((1 & 0x7L) << 0);						
@@ -123,7 +123,9 @@ void Adf4351::SetFreq(float desiredFreqMhz) {
 		WriteRegister(registers[i]);
 }
 
-//Writes a single register to the ADF
+//Writes a single register to the ADF.
+//According to the datasheet 25ns are needed between calls.
+//If using arduinos faster than 16mhz you will need to wait between clk high-low and le high-low
 void Adf4351::WriteRegister(long regData) {
 	digitalWrite(_pinConf.lePin, LOW);
 	for(byte i=0; i<32; i++)
@@ -134,11 +136,9 @@ void Adf4351::WriteRegister(long regData) {
 			digitalWrite(_pinConf.dataPin,0);
 		
 		digitalWrite(_pinConf.clkPin, HIGH);
-		delay(1);
 		digitalWrite(_pinConf.clkPin, LOW);
 	}
 	
 	digitalWrite(_pinConf.lePin, HIGH);
-	delay(1);
 	digitalWrite(_pinConf.lePin, LOW);
 }

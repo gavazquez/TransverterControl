@@ -19,9 +19,10 @@ unsigned long debounceDelay = 50;
 void setup() 
 {  
   DDRB &= ~(1 << PB3);
-  DDRB &= ~(1 << PB4);  
-  PORTB |= (1 << PB3);  //activate internal pull-up resistor for PB3
-  PORTB |= (1 << PB4);  //activate internal pull-up resistor for PB4
+  DDRB &= ~(1 << PB4);
+  //Activate internal pull-up resistors
+  PORTB |= (1 << PB3);
+  PORTB |= (1 << PB4);
   
   // Check if there exist any OSCCAL value in EEPROM addr. 0
   // If not, run the oscillator tuner sketch first

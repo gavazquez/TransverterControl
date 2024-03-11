@@ -17,9 +17,10 @@ void setup()
 { 
   //Input
   DDRB &= ~(1 << PB3);
-  DDRB &= ~(1 << PB4);  
-  PORTB |= (1 << PB3);  //activate internal pull-up resistor for PB3
-  PORTB |= (1 << PB4);  //activate internal pull-up resistor for PB4
+  DDRB &= ~(1 << PB4);
+  //Activate internal pull-up resistors
+  PORTB |= (1 << PB3);
+  PORTB |= (1 << PB4);
 
   //Output
   DDRB |= (1 << PB0);
@@ -50,34 +51,34 @@ void loop()
       switch(selector) {
         case 0: //200
           WriteRegister(0x580005);
-          WriteRegister(0xC2843C);
-          WriteRegister(0xE484B3);
-          WriteRegister(0x19004142);
-          WriteRegister(0x8011);
+          WriteRegister(0xCC803C);
+          WriteRegister(0x4B3);
+          WriteRegister(0x19004E42);
+          WriteRegister(0x8008011);
           WriteRegister(0x500000);
         break;
         case 1: //166.25 (33.750)
           WriteRegister(0x580005);
-          WriteRegister(0xC2803C);
-          WriteRegister(0x8084B3);
+          WriteRegister(0xCC803C);
+          WriteRegister(0x4B3);
           WriteRegister(0x19004E42);
-          WriteRegister(0x8011);
+          WriteRegister(0x8008011);
           WriteRegister(0x428000);
         break;
         case 2: //159 (41)
           WriteRegister(0x580005);
-          WriteRegister(0xC2803C);
-          WriteRegister(0x8084B3);
+          WriteRegister(0xCC803C);
+          WriteRegister(0x4B3);
           WriteRegister(0x19004E42);
-          WriteRegister(0x8029);
+          WriteRegister(0x8008029);
           WriteRegister(0x3F8008);
         break;
         case 3: //141,075 (58.925)
           WriteRegister(0x580005);
-          WriteRegister(0xC2803C);
-          WriteRegister(0x8084B3);
+          WriteRegister(0xCC803C);
+          WriteRegister(0x4B3);
           WriteRegister(0x19004E42);
-          WriteRegister(0x8191);
+          WriteRegister(0x8008191);
           WriteRegister(0x380158);
         break;
       }
@@ -98,10 +99,8 @@ void WriteRegister(long regData){
 		  PORTB &= ~(1 << PB1);	
 
     PORTB |= (1 << PB2);
-		delay(1);
     PORTB &= ~(1 << PB2);
 	}
   PORTB |= (1 << PB0);
-	delay(1);
   PORTB &= ~(1 << PB0);
 }
