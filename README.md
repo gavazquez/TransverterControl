@@ -6,7 +6,9 @@ Plase check it's [transverters](https://satcomradio.github.io/#/transverters/ind
 Repo for controlling the [UR3LMZ Transverter](https://satcomradio.github.io/#/transverters/index?id=ur3lmz-transverter).  
 It also uses a customized and simple ADF4351 library.
 
-With this code you will be able to configure the RX offset (so you can use radios that are very narrow band on RX) and also it's output offsets.
+With this code you will be able to configure the RX and TX offsets.  
+When you have control of the offsets you can even set a radio to a given frequency (440mhz) and then just control it's RX frequency and TX frequency using the offsets, 
+that would allow a very narrow band like the icom9700 to work on satcom frequencies.
 
 Check the images in the [Doc](./Doc) folder of the repo to see how the default firmware (checked with a logic analyzer) configures the registers of the ADF4351.  
 Be sure to check also it's [datasheet](./Doc/adf4351.pdf)
