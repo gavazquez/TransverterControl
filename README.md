@@ -39,6 +39,8 @@ In order to compile any of the Attiny sketches with an **Arduino UNO**:
 You can use a spectrum analyzer to check the frequencies of the ADF on the first pin of the output pins.  
 If you're using a tinySA consider using an attenuator as it's output is +7dbm and it's close to the limit.
 
+If you want to check the output frequency of the transverter without using the internal amplifier, you can remove the jumper pin.
+
 -----
 
-As a final note, in case you want to increase the output power of the transverter, you can drive it at 9V to get a 1W of power output and use a [amplifier](https://satcomradio.github.io/#/amplifiers/index)
+As a final note, in case you want to increase the output power of the transverter, you can drive it at 9V to get a 1W output and feed with it the bias of an [amplifier](https://satcomradio.github.io/#/amplifiers/index)
