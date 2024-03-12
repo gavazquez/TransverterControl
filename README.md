@@ -5,12 +5,13 @@ Plase check it's [transverters](https://satcomradio.github.io/#/transverters/ind
 
 <img src="./Doc/transverter.jpg" alt="UR3LMZ Transverter" width="400"/>
 
-Repo for controlling the [UR3LMZ Transverter](./Doc/transverter.jpg).  
+Repo for controlling the UR3LMZ Transverter.  
 It also uses a customized and simple [ADF4351 library](./Library).
 
 With this code you will be able to configure the RX and TX offsets.  
-When you have control of the offsets you can even set a radio to a given frequency (440mhz) and then just control it's RX frequency and TX frequency using the offsets, 
-that would allow a very narrow band like the icom9700 to work on satcom frequencies.  
+
+#### This allows a very narrow band radio like the Icom9700 to work on satcom frequencies using this transverter. 
+#### You can even set a radio to a static frequency like 440mhz and then just control it's RX frequency and TX frequency using the offsets.
 
 It's important to note that for the UHF transverter, the offsets **decrease** the frequency and for VHF **increases** it.
 
