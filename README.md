@@ -10,8 +10,12 @@ It also uses a customized and simple [ADF4351 library](./Library).
 
 With this code you will be able to configure the RX and TX offsets.  
 
-#### This allows a very narrow band radio like the Icom9700 to work on satcom frequencies using this transverter. 
-#### You can even set a radio to a static frequency like 440mhz and then just control it's RX frequency and TX frequency using the offsets.
+-----
+
+This allows a very narrow band radio like the Icom9700 to work on satcom frequencies using this transverter. 
+You can even set a radio to a static frequency like 440mhz and then just control it's RX frequency and TX frequency using the offsets.
+
+-----
 
 It's important to note that for the UHF transverter, the offsets **decrease** the frequency and for VHF **increases** it.
 
@@ -47,9 +51,6 @@ In order to compile any of the Attiny sketches with an **Arduino UNO**:
 4. With the transverter turned **OFF**. Connect the pins to the transverter board following this [picture](./Doc/adf_pinout.jpg)
 	`MOSI - 11, MISO - 12, CLK - 13, RESET - 10, 5V and GND`
 5. Upload the Attiny sketch with `Sketch -> Upload using programmer` and selecting the Attiny13 as board.
-
-
------
 
 ## Final notes
 
