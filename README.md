@@ -59,7 +59,7 @@ In order to compile any of the Attiny sketches with an **Arduino UNO**:
 
 - It's recommended to install a fan, replace the back cover with an aluminium plate or at least [add a heatsink](./Doc/temperature_fix.jpg).
 
-- You can use a spectrum analyzer to check the frequencies of the ADF on the first pin of the output pins.  
+- You can use a spectrum analyzer to check the frequencies of the ADF on the [first pin of the output pins](./Doc/adf_pinout.jpg).  
 If you're using a tinySA consider using an attenuator as it's output is +7dbm and it's close to it's limit.
 
 - If you want to check the output frequency of the transverter without using the internal amplifier, you can [remove the jumper](./Doc/disable_amplifier.jpg).
