@@ -3,7 +3,7 @@ Plase check it's [transverters](https://satcomradio.github.io/#/transverters/ind
 
 # UR3LMZ Transverter Controller
 
- ![UR3LMZ Transverter](/assets/images/tux.png)
+<img src="./Doc/transverter.jpg" alt="UR3LMZ Transverter" width="400"/>
 
 Repo for controlling the [UR3LMZ Transverter](./Doc/transverter.jpg).  
 It also uses a customized and simple [ADF4351 library](./Library).
@@ -17,8 +17,7 @@ It's important to note that for the UHF transverter, the offsets **decrease** th
 Check the images in the [Doc](./Doc) folder of the repo to see how the default firmware (checked with a logic analyzer) 
 configures the registers for RX and TX of the ADF4351.  
 
-<img src="./Doc/RXSettings.png" alt="RX" width="200"/>
-<img src="./Doc/TXSettings.png" alt="TX" width="200"/>
+<img src="./Doc/RXTXSettings.png" alt="RX-TX settings" width="800"/>
 
 Be sure to check also the [datasheet](./Doc/adf4351.pdf) of the ADF.
 
