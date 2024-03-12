@@ -1,7 +1,7 @@
 ### This repo collaborates with the [Satcom radio](http://satcomradio.github.io) website!
 Plase check it's [transverters](https://satcomradio.github.io/#/transverters/index) section for more info.
 
-# UR3LMZ Transverter Controller
+# [UR3LMZ](mailto:ur3lmz@gmail.com) Transverter Controller
 
 <img src="./Doc/transverter.jpg" alt="UR3LMZ Transverter" width="400"/>
 
