@@ -12,7 +12,7 @@ With this code you will be able to configure the RX and TX offsets.
 
 -----
 
-This allows a very narrow band radio like the Icom9700 to work on satcom frequencies using this transverter. 
+This allows a very narrow band radio like the Icom9700 to work on satcom frequencies using this transverter.  
 You can even set a radio to a static frequency like 440mhz and then just control it's RX frequency and TX frequency using the offsets.
 
 -----
