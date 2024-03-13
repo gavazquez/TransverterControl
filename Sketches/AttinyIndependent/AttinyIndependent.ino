@@ -57,7 +57,15 @@ void loop()
           WriteRegister(0x8008011);
           WriteRegister(0x500000);
         break;
-        case 1: //166.25 (33.750)
+        case 1: //200
+          WriteRegister(0x580005);
+          WriteRegister(0xCC803C);
+          WriteRegister(0x4B3);
+          WriteRegister(0x19004E42);
+          WriteRegister(0x8008011);
+          WriteRegister(0x500000);
+        break;
+        case 2: //166.25 (33.750)
           WriteRegister(0x580005);
           WriteRegister(0xCC803C);
           WriteRegister(0x4B3);
@@ -65,21 +73,13 @@ void loop()
           WriteRegister(0x8008011);
           WriteRegister(0x428000);
         break;
-        case 2: //159 (41)
+        case 3: //150 (50)
           WriteRegister(0x580005);
           WriteRegister(0xCC803C);
           WriteRegister(0x4B3);
           WriteRegister(0x19004E42);
-          WriteRegister(0x8008029);
-          WriteRegister(0x3F8008);
-        break;
-        case 3: //141,075 (58.925)
-          WriteRegister(0x580005);
-          WriteRegister(0xCC803C);
-          WriteRegister(0x4B3);
-          WriteRegister(0x19004E42);
-          WriteRegister(0x8008191);
-          WriteRegister(0x380158);
+          WriteRegister(0x8008011);
+          WriteRegister(0x3C0000);
         break;
       }
     }

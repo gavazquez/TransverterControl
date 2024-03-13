@@ -59,15 +59,15 @@ void SetFrequency(byte transverterVal) {
         digitalWrite(LED_BUILTIN, LOW);
       break;
       case 1:
-        adf.SetFreq(166.25);
+        adf.SetFreq(200);
         digitalWrite(LED_BUILTIN, HIGH);
       break;
       case 2:
-        adf.SetFreq(159); //41
+        adf.SetFreq(166.25); //166.25 (33.750)
         digitalWrite(LED_BUILTIN, HIGH);
       break;
       case 3:
-        adf.SetFreq(141.075); //58.925
+        adf.SetFreq(150); //150 (50)
         digitalWrite(LED_BUILTIN, HIGH);
       break;
     }
