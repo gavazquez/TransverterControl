@@ -5,7 +5,7 @@ Plase check it's [transverters](https://satcomradio.github.io/#/transverters/ind
 
 <img src="./Doc/transverter.jpg" alt="UR3LMZ Transverter" width="400"/>
 
-Repo for controlling the UR3LMZ Transverter.  
+Repo for controlling the [UR3LMZ](mailto:ur3lmz@gmail.com) transverter made by Alexander.  
 It also uses a customized and simple [ADF4351 library](./Library).
 
 With this code you will be able to configure the RX and TX offsets.  
