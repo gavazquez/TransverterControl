@@ -2,11 +2,11 @@
 //It only tells the arduino in what position is the selector
 //Uses attiny13 microcore board. Upload it using the arduino ISP programmer and connect MISO,MOSI,CLK,RESET accordingly
 
-#include <EEPROM.h>
-#include <avr/io.h>
-
 //Override default TX pin that is on MOSI (LE) position of the ADF and use the pin that is on DATA position
 #define UART_TX_PIN B,1
+
+#include <EEPROM.h>
+#include <avr/io.h>
 
 byte val1=255;
 byte val2=255;
