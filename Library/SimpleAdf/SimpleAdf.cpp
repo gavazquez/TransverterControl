@@ -89,7 +89,7 @@ void Adf4351::SetFreq(float desiredFreqMhz) {
 	if (mod == 1) mod = 2;
 
 	//Cleanup stored registers
-	for(byte i = 5; i > -1; i--)
+	for(int i = 5; i > -1; i--)
 		registers[i] = 0;
 
 	//Check adf datasheet to check the bit positions
@@ -119,7 +119,7 @@ void Adf4351::SetFreq(float desiredFreqMhz) {
 			| ((5 & 0x7L) << 0);
 
 	//Write them in inverse order as specified in datasheet
-	for(byte i = 5; i > -1; i--)
+	for(int i = 5; i > -1; i--)
 		WriteRegister(registers[i]);
 }
 
