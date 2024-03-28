@@ -1,5 +1,6 @@
 #include "Arduino.h"
 #include "SimpleAdf.h"
+#include <math.h>
 
 Adf4351::Adf4351(adf4351Config &adfConf, pinConfig &pinConf) {
 	_adfConf = adfConf;
@@ -16,11 +17,10 @@ byte Adf4351::getPfdFreq() {
   return _adfConf.refFreqMhz * (((1.0+(_adfConf.refDoubler))/(_adfConf.rCounter*(1.0+_adfConf.referenceDivider))));
 }
 
-//The fractional modulus is the ratio of the PFD freq to the channel step resolution
+//The fractional modulus is the ratio of the PFD freq to the channel spacing
 //This value depends highly on the channel spacing you are requesting and the reference frequency
 int Adf4351::getMod(int pfdFreq, int outputDivider) {
-  float vfoOutputRes = outputDivider * _adfConf.channelSpacing; 
-  return (int)(1000.0 * (pfdFreq/vfoOutputRes));
+  return (int)round((1000.0 * (pfdFreq/_adfConf.channelSpacing)));
 }
 
 //The Output generator operates between 2200 and 2400Mhz so if your requestedFreq is outside that range
@@ -60,7 +60,7 @@ int gcd(int a, int b) {
 
 //Gets the FRAC value for the adf
 int getFrac(float numeratorFracDivision, int integerDivisionFactor, int mod) {
-  return (int)((numeratorFracDivision-integerDivisionFactor)*mod);
+  return (int)round((numeratorFracDivision-integerDivisionFactor)*mod);
 }
 
 //The numerator of the fractional division or also called "N"
@@ -75,7 +75,7 @@ float Adf4351::getNumeratorFractionalDivision(float desiredFreqMhz, byte outputD
 void Adf4351::SetFreq(float desiredFreqMhz) {
 	byte outputDivider = getOutputDivider(desiredFreqMhz);
 	byte pfdFreq = getPfdFreq();
-	int mod = getMod(pfdFreq, outputDivider);		
+	int mod = getMod(pfdFreq, outputDivider);
 	float numerator = getNumeratorFractionalDivision(desiredFreqMhz, outputDivider, pfdFreq);
 	int integer = (int)numerator;
 	int frac = getFrac(numerator, integer, mod);
