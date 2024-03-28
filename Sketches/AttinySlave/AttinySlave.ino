@@ -60,7 +60,7 @@ void loop()
 
 //Send the selector position trough serial. It will be serialized as a CHAR!
 void printValue(){
-    int combined = (val1 << 1) | val2;
+    byte combined = (val1 << 1) | val2;
     if (combined == 3)
       Serial.print(0, DEC);
     else if (combined == 0) 
