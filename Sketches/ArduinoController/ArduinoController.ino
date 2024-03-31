@@ -16,7 +16,7 @@ char transValChar[] = "0";
 byte transVal = 0;
 byte lastTransVal = 255;
 
-adf4351Config adfConfig = {true, 100, 40, 1, false, true, eightDiv9, fundamental, false, 1, 
+adf4351Config adfConfig = {true, 20, 40, 1, false, true, eightDiv9, fundamental, false, 1, 
 {lowNoise, digitalLockDetect, false, twoDot5, fracN, tenNs, positive, false, false, false},
 {low, frac6ns, false, false, off, 150},
 {false, false, auxDivided, false, minus4, true, plus5, 200},
