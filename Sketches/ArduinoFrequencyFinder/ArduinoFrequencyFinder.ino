@@ -73,10 +73,9 @@ void ScanBeacon() {
   //Put here the base frequency that you will configure on your radio. Once that's set DO NOT configure any offset in the TX of the radio.
   float baseFreq = 255.35;
 
-  
   float from = 290; //Frequency to start  
-  float to = 310; //Frequency to finish  
-  short txDurationMs = 250 //Duration of the PTT on a given frequency in milliseconds
+  float to = 301; //Frequency to finish  
+  short txDurationMs = 250; //Duration of the PTT on a given frequency in milliseconds
   float step = 0.005; //Frequency step
 
   long start = millis();
