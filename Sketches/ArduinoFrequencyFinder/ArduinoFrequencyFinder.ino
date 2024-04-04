@@ -1,4 +1,5 @@
 //This will ONLY work if the attiny has the sketch AttinySlave inside!
+//This code is made for the UHF version of the transverter!
 //This sketch transmit a tx tone of a given duration in a range of frequencies.
 //This is very useful to discover the TX frequency on satcom while using a SDR to see if the frequency appears there
 
@@ -61,8 +62,8 @@ void SetFrequency(byte transverterVal) {
         digitalWrite(LED_BUILTIN, LOW);
       break;
       default:
-        ScanBeacon();
         digitalWrite(LED_BUILTIN, HIGH);
+        ScanBeacon();
       break;
     }
     pinMode(data, INPUT);
@@ -70,18 +71,17 @@ void SetFrequency(byte transverterVal) {
 
 void ScanBeacon() {  
 
-  //Put here the base frequency that you will configure on your radio. Once that's set DO NOT configure any offset in the TX of the radio.
+  //Put here the base frequency that you will configure on your radio. 
+  //Once that's set DO NOT configure any offset in the TX of the radio and do not change it.
   float baseFreq = 255.35;
 
-  float from = 290; //Frequency to start  
-  float to = 301; //Frequency to finish  
-  short txDurationMs = 250; //Duration of the PTT on a given frequency in milliseconds
-  float step = 0.005; //Frequency step
+  float from = 290.000; //Frequency to start  
+  float to = 310.000; //Frequency to finish  
+  short txDurationMs = 250; //Duration of the PTT on a given frequency in milliseconds. Increase this value to see it more easely on a SDR or when you have a narrow range.
+  float step = 0.005; //Frequency step. Use 0.01 for a faster but less detailed scanning.
 
   long start = millis();
   Serial.println("START");
-  PrintFreq(baseFreq, (from - baseFreq), 200 - (from - baseFreq));
-  adf.SetFreq(200 - (from - baseFreq));
 
   for (float i = from; i < to; i+=step) {
       float freqOffset= i - baseFreq;
