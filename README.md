@@ -43,6 +43,10 @@ Upload this sketch to an arduino and you'll be able to control the transverter. 
 AttinySlave and set the configured frequencies using an [ADF4351 library](./Library).  
 Feel free to expand this sketch to add a **screen controller** using encoders or whatever idea you may have.
 
+4. `ArduinoFrequencyFinder`
+This sketch sends a TX tone witha duration of few milliseconds in a frequency range.
+This allows to find the uplink of a satellite while looking on a SDR.
+  
 In order to compile any of the Attiny sketches with an **Arduino UNO**:
 
 1. Install the [microcore](https://github.com/MCUdude/MicroCore) board to be able to compile Attiny code.
