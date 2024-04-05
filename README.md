@@ -44,8 +44,8 @@ AttinySlave and set the configured frequencies using an [ADF4351 library](./Libr
 Feel free to expand this sketch to add a **screen controller** using encoders or whatever idea you may have.
 
 4. `ArduinoFrequencyFinder`
-This sketch sends a TX tone witha duration of few milliseconds in a frequency range.
-This allows to find the uplink of a satellite while looking on a SDR.
+This sketch sends a TX tone with a duration of few milliseconds in a frequency range.
+This allows finding the uplink of a satellite while looking at an SDR.
   
 In order to compile any of the Attiny sketches with an **Arduino UNO**:
 
