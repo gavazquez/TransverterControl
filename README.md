@@ -62,7 +62,7 @@ In order to compile any of the Attiny sketches with an **Arduino UNO**:
 [amplifier](https://satcomradio.github.io/#/amplifiers/index).  
 
 - It's recommended to install a fan, replace the back cover with an aluminium plate or at least [add a heatsink](./Doc/temperature_fix.jpg).
-  Check the [3DPrint folder](./3DPrint) for a full case cover that allows to connect a DIN6 connector and a 3010 FAN
+  Check the [3DPrint folder](./3DPrint) for a full case cover that allows to connect a DIN6 connector and a 4010 FAN
 
 - You can use a spectrum analyzer to check the frequencies of the ADF on the [first pin of the output pins](./Doc/adf_pinout.jpg).  
 If you're using a tinySA consider using an attenuator as it's output is +7dbm and it's close to it's limit.
