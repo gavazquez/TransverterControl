@@ -65,13 +65,13 @@ void loop()
           WriteRegister(0x8008011);
           WriteRegister(0x500000);
         break;
-        case 2: //166.25 (33.750)
+        case 2: //175 (25)
           WriteRegister(0x580005);
           WriteRegister(0xCC803C);
           WriteRegister(0x4B3);
           WriteRegister(0x19004E42);
           WriteRegister(0x8008011);
-          WriteRegister(0x428000);
+          WriteRegister(0x460000);
         break;
         case 3: //150 (50)
           WriteRegister(0x580005);
