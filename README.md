@@ -12,6 +12,10 @@ With this code you will be able to configure the RX and TX offsets.
 
 -----
 
+[Here is a tutorial](https://github.com/gavazquez/TransverterControl/wiki/How-to-install-your-own-offsets) on how to set up the Arduino IDE software so you can upload your own offsets
+
+-----
+
 This allows a very narrow band radio like the *Icom 9700* to work on satcom frequencies using this transverter.  
 You can even set a radio to a fixed frequency like 440mhz and then just control it's RX/TX frequency only using the offsets.
 
