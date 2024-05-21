@@ -36,8 +36,7 @@ In the [Sketches](./Sketches) folder you will find 3 sketches.
 
 1. `AttinyIndependent`
 This sketch allows you to upload the code to the attiny and configure the frequencies you want in the selector.  
-Use the [ADFSoftware](./ADFSoftware) to calculate the registers and insert them in **reverse** order (from R5 to R0) as done in the default sketch.  
-In most cases, you'll only need to modify the register 0 and 1.
+Use the [ADFSoftware](./ADFSoftware) to calculate the registers and insert them in **reverse** order (from R5 to R0) as done in the sketch.  
 
 2. `AttinySlave`
 This sketch makes the Attiny a slave of an arduino. It only tells the arduino using UART if it's in RX (0) and when it is transmitting, in what position you have the selector (1-3).
